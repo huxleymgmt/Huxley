@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONTS -->
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/dhb7uvb.css" /> -->
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <style>
+      @font-face {
+        font-family: "bn_minayregular";
+        src: url("fonts/1--huxminay-webfont.woff2") format("woff2"),
+          url("fonts/1--huxminay-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "bn_ciceroregular";
+        src: url("fonts/2--huxcicero-webfont.woff2") format("woff2"),
+          url("fonts/2--huxcicero-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "bn_ciceroregular", sans-serif;
+        background-color: #ffffff;
+      }
+
+      header {
+        /* display: flex; */
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+      }
+      
+      #wavey{
+          width: 100%; 
+          text-align: center;
+          padding-top: 50px;
+          padding-bottom: 20px;
+          
+      }
+
+      header h2 {
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 60px;
+        line-height: 60px;
+        color: #333;
+        text-transform: uppercase;
+        font-family: "bn_minayregular", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      h2 {
+        font-size: 22px;
+        line-height: 22px;
+        color: #333;
+        text-transform: uppercase;
+        font-family: "menca", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+
+        font-family: "bn_ciceroregular", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+      
+      h2.sub {
+          font-size: 16.4px;
+      }
+      
+      h2.contact {
+       float: right;
+       position: absolute;
+       top: 25px;
+       right: 30px;
+      }
+    
+
+
+      h3 {
+        font-size: 40px;
+        line-height: 40px;
+        color: #333;
+        text-transform: uppercase;
+        font-family: "menca", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+
+        font-family: "bn_ciceroregular", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      .icon {
+        font-size: 30px;
+      }
+
+      .photo-grid {
+        padding-top: 20px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 10px;
+        padding: 20px;
+      }
+
+      .photo-box {
+        background-color: #ddd;
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        padding-bottom: 100%;
+      }
+
+      .photo-box img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .photo-box:hover img {
+        transform: scale(1.05);
+      }
+
+      .photo-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .photo-content a {
+        font-size: 15px;
+        line-height: 15px;
+        color: #333;
+        text-transform: uppercase;
+        font-family: "menca", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .photo-box:hover {
+        cursor: pointer;
+      }
+      .photo-box:hover .photo-content {
+        opacity: 1;
+      }
+      .photo-box:hover h3.artist-name {
+        transition: 0.3s;
+        padding-left: 15px;
+      }
+
+      .photo-content h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      h3.artist-name {
+        font-size: 22px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background: #fff;
+        padding: 5px 10px;
+      }
+
+      .social-icons {
+        display: flex;
+      }
+
+      .social-icons a {
+        margin: 0 5px;
+        font-size: 18px;
+      }
+      
+      @media only screen and (max-width: 350px) {
+       h2.contact {
+          float: unset;
+          position: unset;
+      }
+      }
+      
+      
+    </style>
+    <title>Huxley Management</title>
+  </head>
+  <body>
+    <header>
+      <h1>Huxley</h1>
+
+      <h2 class="sub">Artist Management</h2>
+
+      <h2 class="contact">
+        <a href="mailto:noah@huxleymgmt.com">Contact</a>
+      </h2>
+    </header>
+    <section class="photo-grid">
+      <!-- Aron D'Alesio -->
+      <a href="https://www.arondalesio.com/" target="_blank">
+        <div class="photo-box">
+          <h3 class="artist-name">Aron D'Alesio</h3>
+          <img src="img/Aron-DAlesio.png" alt="Aron D'Alesio" />
+          <div class="photo-content">
+            <!-- <h3>Aron D'Alesio</h3> -->
+          </div>
+        </div>
+      </a>
+      <!-- END OF ARTIST BOX -->
+
+      <!-- Basia Bulat -->
+      <a href="https://basiabulat.com" target="_blank">
+        <div class="photo-box">
+          <h3 class="artist-name">Basia Bulat</h3>
+          <img src="img/Basia-Bulat-by-Richmond-Lam.png" alt="Basia Bulat" />
+          <div class="photo-content">
+            <!-- <h3>Basia Bulat</h3> -->
+            <!-- <a href="https://basiabulat.com/" target="_blank">Website</a> -->
+          </div>
+        </div>
+      </a>
+      <!-- END OF ARTIST BOX -->
+
+      <!-- Born Ruffians -->
+      <a href="https://www.bornruffians.ca" target="_blank">
+        <div class="photo-box">
+          <h3 class="artist-name">Born Ruffians</h3>
+          <img
+            src="img/Born-Ruffians-by-Roger-Galvez.png"
+            alt="Born Ruffians"
+          />
+          <div class="photo-content">
+            <!-- <h3>Born Ruffians</h3> -->
+            <!-- <a href="https://basiabulat.com/" target="_blank">Website</a> -->
+          </div>
+        </div>
+      </a>
+      <!-- END OF ARTIST BOX -->
+
+      <!-- Luke Lalonde -->
+      <a href="https://lukelalonde.com/" target="_blank">
+        <div class="photo-box">
+          <h3 class="artist-name">Luke Lalonde</h3>
+          <img src="img/Luke-Lalonde.png" alt="Luke Lalonde" />
+          <div class="photo-content">
+            <!-- <h3>Luke Lalonde</h3> -->
+            <!-- <a href="https://basiabulat.com/" target="_blank">Website</a> -->
+          </div>
+        </div>
+      </a>
+      <!-- END OF ARTIST BOX -->
+    </section>
+    
+    <div id="wavey">
+      <a href="https://www.wavyhaze.com/" target="_blank"
+        ><img class="wh_logo" src="img/wavey_haze.png" alt="Wavey Haze"
+      /></a>
+    </div>
+    
+    
+  </body>
+</html>
